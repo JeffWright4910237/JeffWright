@@ -13,6 +13,7 @@ contract TaxToken is ERC20, Ownable {
         _mint(msg.sender, 10000000000 * 10 ** decimals());
     }
 
+
     function _update(address from, address to, uint256 amount) internal override {
         if (from != address(0) && to != address(0)) {
             uint256 tax = amount * TAX_RATE / 100;
